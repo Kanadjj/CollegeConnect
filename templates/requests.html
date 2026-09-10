@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Requests - CollegeConnect</title>
+    <title>Requests | CollegeConnect</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -21,7 +21,7 @@
             <a href="/#announcements">Announcements</a>
             <a href="/calendar">Calendar</a>
             <a href="/queries">Queries</a>
-            <a href="/requests">Requests</a>
+            <a href="/requests" class="active">Requests</a>
             <a href="/dashboard">Dashboard</a>
         </div>
 
@@ -31,110 +31,237 @@
 
     <main class="request-page">
 
-        <div class="request-header">
+        <!-- Gradient Hero -->
+        <section class="request-hero">
 
-            <p>STUDENT SERVICES</p>
+            <div class="request-hero-content">
 
-            <h1>Submit a Request</h1>
+                <p class="request-hero-label">
+                    COLLEGE SERVICES
+                </p>
 
-            <p>
-                Submit administrative requests and track their
-                progress from one place.
-            </p>
+                <h1>
+                    Need Something<br>
+                    From College?
+                </h1>
 
-        </div>
-
-
-        <div class="request-container">
-
-            <form id="request-form">
-
-                <label for="request-type">
-                    Request Type
-                </label>
-
-                <select id="request-type" required>
-
-                    <option value="">
-                        Select request type
-                    </option>
-
-                    <option value="Bonafide Certificate">
-                        Bonafide Certificate
-                    </option>
-
-                    <option value="Fee Related">
-                        Fee Related
-                    </option>
-
-                    <option value="ID Card">
-                        ID Card
-                    </option>
-
-                    <option value="Document">
-                        Document Request
-                    </option>
-
-                    <option value="Other">
-                        Other
-                    </option>
-
-                </select>
-
-
-                <label for="request-department">
-                    Department
-                </label>
-
-                <select id="request-department" required>
-
-                    <option value="">
-                        Select department
-                    </option>
-
-                    <option value="Administration">
-                        Administration
-                    </option>
-
-                    <option value="Accounts">
-                        Accounts
-                    </option>
-
-                    <option value="Examination">
-                        Examination
-                    </option>
-
-                    <option value="Academic">
-                        Academic
-                    </option>
-
-                </select>
-
-
-                <label for="request-description">
-                    Description
-                </label>
-
-                <textarea
-                    id="request-description"
-                    rows="6"
-                    placeholder="Describe your request..."
-                    required
-                ></textarea>
-
-
-                <button type="submit" class="submit-btn">
-                    Submit Request
-                </button>
-
-            </form>
-
-
-            <div id="request-result" class="query-result">
+                <p>
+                    Submit administrative requests and get the services
+                    you need without the hassle. Choose a service,
+                    provide the details, and we'll take it from there.
+                </p>
 
             </div>
 
-        </div>
+            <!-- Decorative circles -->
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+
+        </section>
+
+
+        <!-- Main Request Area -->
+        <section class="request-main">
+
+            <!-- Left Information -->
+            <div class="request-info">
+
+                <div class="request-illustration">
+
+                    <div class="document-card">
+
+                        <div class="document-icon">
+                            ✓
+                        </div>
+
+                        <div class="document-lines">
+                            <span class="line-large"></span>
+                            <span class="line-medium"></span>
+                            <span class="line-small"></span>
+                            <span class="line-medium"></span>
+                        </div>
+
+                        <div class="document-stamp">
+                            REQUEST
+                        </div>
+
+                    </div>
+
+                    <div class="floating-dot dot-one"></div>
+                    <div class="floating-dot dot-two"></div>
+                    <div class="floating-dot dot-three"></div>
+
+                </div>
+
+
+                <div class="request-info-text">
+
+                    <span>STUDENT SERVICES</span>
+
+                    <h2>
+                        Everything you need,
+                        in one place.
+                    </h2>
+
+                    <p>
+                        CollegeConnect makes it easier to submit
+                        common college service requests and keep
+                        track of them.
+                    </p>
+
+                    <div class="service-list">
+
+                        <div class="service-item">
+                            <div class="service-icon">✓</div>
+                            <span>Certificates & documents</span>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">✓</div>
+                            <span>Fee related requests</span>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">✓</div>
+                            <span>ID card services</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Floating Form -->
+            <div class="request-form-card">
+
+                <div class="request-form-heading">
+
+                    <span>SUBMIT A REQUEST</span>
+
+                    <h2>How can we help?</h2>
+
+                    <p>
+                        Fill in the details below and submit your request.
+                    </p>
+
+                </div>
+
+
+                <form id="request-form">
+
+                    <div class="request-field">
+
+                        <label for="request-type">
+                            Request Type
+                        </label>
+
+                        <select id="request-type" required>
+
+                            <option value="" disabled selected>
+                                Select request type
+                            </option>
+
+                            <option value="Bonafide Certificate">
+                                Bonafide Certificate
+                            </option>
+
+                            <option value="Fee Related">
+                                Fee Related
+                            </option>
+
+                            <option value="ID Card">
+                                ID Card
+                            </option>
+
+                            <option value="Document">
+                                Document Request
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="request-field">
+
+                        <label for="request-department">
+                            Department
+                        </label>
+
+                        <select id="request-department" required>
+
+                            <option value="" disabled selected>
+                                Select department
+                            </option>
+
+                            <option value="Administration">
+                                Administration
+                            </option>
+
+                            <option value="Accounts">
+                                Accounts
+                            </option>
+
+                            <option value="Examination">
+                                Examination
+                            </option>
+
+                            <option value="Academic">
+                                Academic
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="request-field">
+
+                        <label for="request-description">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="request-description"
+                            rows="5"
+                            placeholder="Describe your request..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="request-submit-btn"
+                    >
+                        <span>Submit Request</span>
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="request-result"
+                    class="query-result"
+                ></div>
+
+
+                <div class="request-form-footer">
+                    Your request will be forwarded to the appropriate
+                    college department.
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 

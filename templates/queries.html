@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,14 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Queries - CollegeConnect</title>
+    <title>Queries | CollegeConnect</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <nav>
         <h2>CollegeConnect</h2>
 
@@ -20,7 +21,7 @@
             <a href="/">Home</a>
             <a href="/#announcements">Announcements</a>
             <a href="#">Calendar</a>
-            <a href="/queries">Queries</a>
+            <a href="/queries" class="active">Queries</a>
             <a href="/dashboard">Dashboard</a>
         </div>
 
@@ -28,97 +29,237 @@
     </nav>
 
 
+    <!-- Queries Page -->
     <main class="query-page">
 
-        <div class="query-header">
+        <!-- HERO -->
+        <section class="query-hero">
 
-            <p>STUDENT SUPPORT</p>
+            <div class="query-hero-content">
 
-            <h1>Ask a Query</h1>
+                <span class="query-hero-label">
+                    STUDENT SUPPORT
+                </span>
 
-            <p>
-                Submit your question to the appropriate college
-                department and track its status.
-            </p>
+                <h1>
+                    How can we<br>
+                    <span>help?</span>
+                </h1>
 
-        </div>
-
-
-        <div class="query-container">
-
-            <form id="query-form">
-
-                <label for="department">
-                    Department
-                </label>
-
-                <select id="department" required>
-
-                    <option value="">
-                        Select a department
-                    </option>
-
-                    <option value="Academic">
-                        Academic
-                    </option>
-
-                    <option value="Examination">
-                        Examination
-                    </option>
-
-                    <option value="Accounts">
-                        Accounts
-                    </option>
-
-                    <option value="Administration">
-                        Administration
-                    </option>
-
-                    <option value="Library">
-                        Library
-                    </option>
-
-                </select>
-
-
-                <label for="subject">
-                    Subject
-                </label>
-
-                <input
-                    type="text"
-                    id="subject"
-                    placeholder="Enter your query subject"
-                    required
-                >
-
-
-                <label for="message">
-                    Query
-                </label>
-
-                <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Describe your question or issue..."
-                    required
-                ></textarea>
-
-
-                <button type="submit" class="submit-btn">
-                    Submit Query
-                </button>
-
-            </form>
-
-
-            <div id="query-result" class="query-result">
-
-                <!-- Tracking information will appear here -->
+                <p>
+                    Have a question or facing an issue?
+                    Submit your query and we'll connect you
+                    with the right college department.
+                </p>
 
             </div>
 
-        </div>
+        </section>
+
+
+        <!-- CONTENT -->
+        <section class="query-content">
+
+            <div class="query-container">
+
+                <!-- LEFT -->
+                <div class="query-info">
+
+                    <div class="query-illustration">
+
+                        <div class="query-illustration-circle">
+
+                            <div class="query-document">
+
+                                <div class="document-top"></div>
+
+                                <div class="document-line line-long"></div>
+                                <div class="document-line line-medium"></div>
+                                <div class="document-line line-short"></div>
+
+                                <div class="document-question">
+                                    ?
+                                </div>
+
+                            </div>
+
+                            <div class="query-bubble">
+                                ?
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="query-info-text">
+
+                        <h2>We're here to help.</h2>
+
+                        <p>
+                            Whether it's academics, examinations,
+                            accounts or administration, send us
+                            your query and we'll make sure it
+                            reaches the right department.
+                        </p>
+
+                    </div>
+
+
+                    <div class="query-departments">
+
+                        <span>Academic</span>
+                        <span>Examination</span>
+                        <span>Accounts</span>
+                        <span>Administration</span>
+                        <span>Library</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT FORM CARD -->
+                <div class="query-form-card">
+
+                    <div class="form-heading">
+
+                        <span class="form-label">
+                            HAVE A QUESTION?
+                        </span>
+
+                        <h2>Submit a query</h2>
+
+                        <p>
+                            Tell us what you need help with and
+                            we'll route your query to the right
+                            department.
+                        </p>
+
+                    </div>
+
+
+                    <form id="query-form">
+
+                        <!-- Department -->
+                        <div class="input-group">
+
+                            <label for="department">
+                                Department
+                            </label>
+
+                            <select
+                                id="department"
+                                name="department"
+                                required
+                            >
+
+                                <option value="" disabled selected>
+                                    Select a department
+                                </option>
+
+                                <option value="Academic">
+                                    Academic
+                                </option>
+
+                                <option value="Examination">
+                                    Examination
+                                </option>
+
+                                <option value="Accounts">
+                                    Accounts
+                                </option>
+
+                                <option value="Administration">
+                                    Administration
+                                </option>
+
+                                <option value="Library">
+                                    Library
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Subject -->
+                        <div class="input-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="Briefly describe your issue"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Message -->
+                        <div class="input-group">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Explain your query in detail..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="query-submit-btn"
+                        >
+
+                            <span>Submit Query</span>
+
+                            <span class="query-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- Result -->
+                    <div
+                        id="query-result"
+                        class="query-result"
+                    ></div>
+
+
+                    <div class="query-help">
+
+                        <span>
+                            Need immediate assistance?
+                        </span>
+
+                        <small>
+                            Visit the concerned college department
+                            during working hours.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -128,3 +269,4 @@
 </body>
 
 </html>
+```

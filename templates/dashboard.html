@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,170 +12,251 @@
 
 <body>
 
+    <!-- Navigation -->
     <nav>
         <h2>CollegeConnect</h2>
 
-       <div>
-    <a href="/">Home</a>
-    <a href="/calendar">Calendar</a>
-    <a href="/queries">Queries</a>
-    <a href="/requests">Requests</a>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/logout">Logout</a>
-</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/calendar">Calendar</a>
+            <a href="/queries">Queries</a>
+            <a href="/requests">Requests</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
     </nav>
 
 
     <main class="dashboard-page">
 
+        <!-- Dashboard Header -->
         <section class="dashboard-header">
-            <h1>Student Dashboard</h1>
-            <p>View your college communication and submitted requests.</p>
-            <div class="notification-box">
-    <h2>🔔 Notifications</h2>
 
-    <div id="notification-list">
-        Loading notifications...
-    </div>
-</div>
+            <div>
+                <h1>Student Dashboard</h1>
+                <p>
+                    View your college communication, queries,
+                    requests and important updates.
+                </p>
+            </div>
+
+            <!-- Notifications -->
+            <div class="notification-box">
+                <h2>🔔 Notifications</h2>
+
+                <div id="notification-list">
+                    Loading notifications...
+                </div>
+            </div>
+
         </section>
 
 
-     <section class="profile-card">
+        <!-- Student Profile -->
+        <section class="profile-card">
 
-    <div>
-        <h2>Student Profile</h2>
+            <div class="profile-info">
 
-        <p><strong>Name:</strong> {{ student.name }}</p>
-        <p><strong>Student ID:</strong> {{ student.student_id }}</p>
-        <p><strong>Course:</strong> {{ student.course }}</p>
-        <p><strong>Year:</strong> {{ student.year }}</p>
-        <p><strong>Division:</strong> {{ student.division }}</p>
-    </div>
+                <div class="profile-avatar">
+                    {{ student.name[0] }}
+                </div>
 
-</section>
+                <div>
+                    <h2>{{ student.name }}</h2>
+                    <p class="student-id">
+                        Student ID: {{ student.student_id }}
+                    </p>
+                </div>
 
+            </div>
+
+            <div class="profile-details">
+
+                <div>
+                    <span>Course</span>
+                    <strong>{{ student.course }}</strong>
+                </div>
+
+                <div>
+                    <span>Year</span>
+                    <strong>{{ student.year }}</strong>
+                </div>
+
+                <div>
+                    <span>Division</span>
+                    <strong>{{ student.division }}</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Access Cards -->
         <section class="dashboard-cards">
 
             <div class="card">
-                <h3>📢 Announcements</h3>
-                <p>3 new announcements available.</p>
-                <a href="/#announcements">View Announcements</a>
+                <div class="card-icon">📢</div>
+                <h3>Announcements</h3>
+                <p>
+                    Stay updated with the latest college announcements.
+                </p>
+                <a href="/#announcements">View Announcements →</a>
             </div>
 
 
             <div class="card">
-                <h3>📅 Upcoming Events</h3>
-                <p>Check examinations, events and deadlines.</p>
-                <a href="/calendar">Open Calendar</a>
+                <div class="card-icon">📅</div>
+                <h3>Upcoming Events</h3>
+                <p>
+                    Check examinations, events and important deadlines.
+                </p>
+                <a href="/calendar">Open Calendar →</a>
             </div>
 
 
             <div class="card">
-                <h3>💬 My Queries</h3>
-                <p>Track questions submitted to college departments.</p>
-                <a href="/queries">Ask / View Queries</a>
+                <div class="card-icon">💬</div>
+                <h3>My Queries</h3>
+                <p>
+                    Ask questions and track your communication with departments.
+                </p>
+                <a href="/queries">View Queries →</a>
             </div>
 
 
             <div class="card">
-                <h3>📝 My Requests</h3>
-                <p>Track certificates and other college requests.</p>
-                <a href="/requests">Submit / View Requests</a>
+                <div class="card-icon">📝</div>
+                <h3>My Requests</h3>
+                <p>
+                    Submit and track certificates and other college requests.
+                </p>
+                <a href="/requests">View Requests →</a>
             </div>
 
         </section>
+
+
+        <!-- My Queries -->
         <section class="tracking-section">
 
-    <h2>My Queries</h2>
+            <div class="section-heading">
+                <div>
+                    <h2>My Queries</h2>
+                    <p>Track your submitted questions.</p>
+                </div>
 
-    {% if queries %}
-        {% for query in queries %}
-
-        <div class="tracking-card">
-
-            <div>
-                <span class="tracking-id">
-                    {{ query.query_id }}
-                </span>
-
-                <h3>{{ query.subject }}</h3>
-
-                <p>
-                    Department: {{ query.department }}
-                </p>
-
-                <p>
-                    {{ query.message }}
-                </p>
+                <a href="/queries">View All →</a>
             </div>
 
-            <span class="status">
-                {{ query.status }}
-            </span>
 
-        </div>
+            {% if queries %}
 
-        {% endfor %}
+                {% for query in queries %}
 
-    {% else %}
+                <div class="tracking-card">
 
-        <p class="empty-message">
-            You haven't submitted any queries yet.
-        </p>
+                    <div class="tracking-content">
 
-    {% endif %}
+                        <span class="tracking-id">
+                            {{ query.query_id }}
+                        </span>
 
-</section>
-<section class="tracking-section">
+                        <h3>{{ query.subject }}</h3>
 
-    <h2>My Requests</h2>
+                        <p class="department">
+                            Department: {{ query.department }}
+                        </p>
 
-    {% if requests %}
-        {% for req in requests %}
+                        <p>
+                            {{ query.message }}
+                        </p>
 
-        <div class="tracking-card">
+                    </div>
 
-            <div>
-                <span class="tracking-id">
-                    {{ req.request_id }}
-                </span>
+                    <span class="status {{ query.status|lower }}">
+                        {{ query.status }}
+                    </span>
 
-                <h3>{{ req.type }}</h3>
+                </div>
 
-                <p>
-                    Department: {{ req.department }}
-                </p>
+                {% endfor %}
 
-                <p>
-                    {{ req.description }}
-                </p>
+            {% else %}
+
+                <div class="empty-message">
+                    <span>💬</span>
+                    <p>You haven't submitted any queries yet.</p>
+                    <a href="/queries">Submit a Query</a>
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- My Requests -->
+        <section class="tracking-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Requests</h2>
+                    <p>Track your submitted college requests.</p>
+                </div>
+
+                <a href="/requests">View All →</a>
             </div>
 
-            <span class="status">
-                {{ req.status }}
-            </span>
 
-        </div>
+            {% if requests %}
 
-        {% endfor %}
+                {% for req in requests %}
 
-    {% else %}
+                <div class="tracking-card">
 
-        <p class="empty-message">
-            You haven't submitted any requests yet.
-        </p>
+                    <div class="tracking-content">
 
-    {% endif %}
+                        <span class="tracking-id">
+                            {{ req.request_id }}
+                        </span>
 
-</section>
+                        <h3>{{ req.type }}</h3>
+
+                        <p class="department">
+                            Department: {{ req.department }}
+                        </p>
+
+                        <p>
+                            {{ req.description }}
+                        </p>
+
+                    </div>
+
+                    <span class="status {{ req.status|lower }}">
+                        {{ req.status }}
+                    </span>
+
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="empty-message">
+                    <span>📝</span>
+                    <p>You haven't submitted any requests yet.</p>
+                    <a href="/requests">Submit a Request</a>
+                </div>
+
+            {% endif %}
+
+        </section>
 
     </main>
 
-</body>
-</html>    </main>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
+```

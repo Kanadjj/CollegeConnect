@@ -4,73 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Login</title>
+    <title>Login | CollegeConnect</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <nav>
-        <h2>CollegeConnect</h2>
-
-        <div>
-            <a href="/">Home</a>
-            <a href="/calendar">Calendar</a>
-            <a href="/queries">Queries</a>
-            <a href="/requests">Requests</a>
-            <a href="/dashboard">Dashboard</a>
-        </div>
-    </nav>
-
     <main class="login-page">
 
-        <div class="login-container">
+        <div class="login-card">
 
-            <h1>Student Login</h1>
+            <!-- Left Side -->
+            <section class="login-visual">
 
-            <p>Login to access your CollegeConnect dashboard.</p>
+                <div class="visual-content">
 
-            <form id="login-form" method="POST" action="/login">
+                    <div class="brand-mark">CC</div>
 
-                <label for="student-id">Student ID</label>
+                    <h1>CollegeConnect</h1>
 
-                <input
-                    type="text"
-                    id="student-id"
-                    name="student_id"
-                    placeholder="Enter your Student ID"
-                    required
-                >
+                    <p>
+                        One place for announcements, academic information
+                        and student services.
+                    </p>
 
-                <label for="password">Password</label>
+                    <div class="visual-illustration">
+                        <div class="illustration-circle">
+                            <div class="illustration-screen">
+                                <div class="screen-header"></div>
 
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    required
-                >
+                                <div class="screen-line long"></div>
+                                <div class="screen-line medium"></div>
+                                <div class="screen-line short"></div>
 
-                <button type="submit">
-                    Login
-                </button>
+                                <div class="screen-card">
+                                    <span></span>
+                                    <div></div>
+                                </div>
 
-            </form>
+                                <div class="screen-card">
+                                    <span></span>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            {% if error %}
-                <div id="login-result">
-                    <p>{{ error }}</p>
+                    <div class="visual-footer">
+                        Student–College Communication Platform
+                    </div>
+
                 </div>
-            {% endif %}
+
+            </section>
+
+
+            <!-- Right Side -->
+            <section class="login-form-section">
+
+                <div class="login-form-content">
+
+                    <div class="form-heading">
+
+                        <span class="form-label">
+                            STUDENT PORTAL
+                        </span>
+
+                        <h2>Welcome back</h2>
+
+                        <p>
+                            Sign in to continue to your CollegeConnect account.
+                        </p>
+
+                    </div>
+
+
+                    <form id="login-form" method="POST" action="/login">
+
+                        <div class="input-group">
+
+                            <label for="student-id">
+                                Student ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="student-id"
+                                name="student_id"
+                                placeholder="Enter your Student ID"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button type="submit">
+                            Sign In
+                        </button>
+
+                    </form>
+
+
+                    {% if error %}
+                        <div id="login-result">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+
+
+                    <div class="login-help">
+                        <span>Need help?</span>
+                        <span>Contact your college administration.</span>
+                    </div>
+
+                </div>
+
+            </section>
 
         </div>
 
     </main>
 
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
-

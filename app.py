@@ -25,7 +25,7 @@ notifications = [
     },
     {
         "title": "Library Timing Updated",
-        "message": "The library will remain open until 8:00 PM on weekdays.",
+        "message": "The library will remain open until 8:00 PM on weekdays ans Saturdays.",
         "date": "15 September 2026",
         "type": "Administration"
     }
@@ -56,7 +56,7 @@ announcements = [
 
 events = [
     {
-        "day": "15",
+        "day": "28",
         "month": "SEP",
         "title": "Mid-Semester Examination",
         "type": "EXAM",
@@ -70,11 +70,11 @@ events = [
         "description": "Internal college hackathon for participating students."
     },
     {
-        "day": "22",
+        "day": "11",
         "month": "SEP",
-        "title": "PCE Assignment Submission",
+        "title": "PCE Mini-Project Submission",
         "type": "DEADLINE",
-        "description": "Last date for submitting the PCE assignment."
+        "description": "Mini-Project for batch 1 is to be held."
     }
 ]
 
@@ -200,7 +200,7 @@ def dashboard():
         "name": "Kanad Joshi",
         "course": "Computer Science",
         "year": "Second Year",
-        "division": "A"
+        "division": "C"
     }
 
     return render_template(
