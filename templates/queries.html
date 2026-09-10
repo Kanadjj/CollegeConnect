@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Queries - CollegeConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>CollegeConnect</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/#announcements">Announcements</a>
+            <a href="#">Calendar</a>
+            <a href="/queries">Queries</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+
+        <button>Student</button>
+    </nav>
+
+
+    <main class="query-page">
+
+        <div class="query-header">
+
+            <p>STUDENT SUPPORT</p>
+
+            <h1>Ask a Query</h1>
+
+            <p>
+                Submit your question to the appropriate college
+                department and track its status.
+            </p>
+
+        </div>
+
+
+        <div class="query-container">
+
+            <form id="query-form">
+
+                <label for="department">
+                    Department
+                </label>
+
+                <select id="department" required>
+
+                    <option value="">
+                        Select a department
+                    </option>
+
+                    <option value="Academic">
+                        Academic
+                    </option>
+
+                    <option value="Examination">
+                        Examination
+                    </option>
+
+                    <option value="Accounts">
+                        Accounts
+                    </option>
+
+                    <option value="Administration">
+                        Administration
+                    </option>
+
+                    <option value="Library">
+                        Library
+                    </option>
+
+                </select>
+
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Enter your query subject"
+                    required
+                >
+
+
+                <label for="message">
+                    Query
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Describe your question or issue..."
+                    required
+                ></textarea>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Query
+                </button>
+
+            </form>
+
+
+            <div id="query-result" class="query-result">
+
+                <!-- Tracking information will appear here -->
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

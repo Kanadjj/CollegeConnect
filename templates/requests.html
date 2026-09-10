@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Requests - CollegeConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>CollegeConnect</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/#announcements">Announcements</a>
+            <a href="/calendar">Calendar</a>
+            <a href="/queries">Queries</a>
+            <a href="/requests">Requests</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+
+        <button>Student</button>
+    </nav>
+
+
+    <main class="request-page">
+
+        <div class="request-header">
+
+            <p>STUDENT SERVICES</p>
+
+            <h1>Submit a Request</h1>
+
+            <p>
+                Submit administrative requests and track their
+                progress from one place.
+            </p>
+
+        </div>
+
+
+        <div class="request-container">
+
+            <form id="request-form">
+
+                <label for="request-type">
+                    Request Type
+                </label>
+
+                <select id="request-type" required>
+
+                    <option value="">
+                        Select request type
+                    </option>
+
+                    <option value="Bonafide Certificate">
+                        Bonafide Certificate
+                    </option>
+
+                    <option value="Fee Related">
+                        Fee Related
+                    </option>
+
+                    <option value="ID Card">
+                        ID Card
+                    </option>
+
+                    <option value="Document">
+                        Document Request
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label for="request-department">
+                    Department
+                </label>
+
+                <select id="request-department" required>
+
+                    <option value="">
+                        Select department
+                    </option>
+
+                    <option value="Administration">
+                        Administration
+                    </option>
+
+                    <option value="Accounts">
+                        Accounts
+                    </option>
+
+                    <option value="Examination">
+                        Examination
+                    </option>
+
+                    <option value="Academic">
+                        Academic
+                    </option>
+
+                </select>
+
+
+                <label for="request-description">
+                    Description
+                </label>
+
+                <textarea
+                    id="request-description"
+                    rows="6"
+                    placeholder="Describe your request..."
+                    required
+                ></textarea>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Request
+                </button>
+
+            </form>
+
+
+            <div id="request-result" class="query-result">
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

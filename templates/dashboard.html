@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>CollegeConnect</h2>
+
+       <div>
+    <a href="/">Home</a>
+    <a href="/calendar">Calendar</a>
+    <a href="/queries">Queries</a>
+    <a href="/requests">Requests</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+</div>
+    </nav>
+
+
+    <main class="dashboard-page">
+
+        <section class="dashboard-header">
+            <h1>Student Dashboard</h1>
+            <p>View your college communication and submitted requests.</p>
+            <div class="notification-box">
+    <h2>🔔 Notifications</h2>
+
+    <div id="notification-list">
+        Loading notifications...
+    </div>
+</div>
+        </section>
+
+
+     <section class="profile-card">
+
+    <div>
+        <h2>Student Profile</h2>
+
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+        <p><strong>Course:</strong> {{ student.course }}</p>
+        <p><strong>Year:</strong> {{ student.year }}</p>
+        <p><strong>Division:</strong> {{ student.division }}</p>
+    </div>
+
+</section>
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+                <h3>📢 Announcements</h3>
+                <p>3 new announcements available.</p>
+                <a href="/#announcements">View Announcements</a>
+            </div>
+
+
+            <div class="card">
+                <h3>📅 Upcoming Events</h3>
+                <p>Check examinations, events and deadlines.</p>
+                <a href="/calendar">Open Calendar</a>
+            </div>
+
+
+            <div class="card">
+                <h3>💬 My Queries</h3>
+                <p>Track questions submitted to college departments.</p>
+                <a href="/queries">Ask / View Queries</a>
+            </div>
+
+
+            <div class="card">
+                <h3>📝 My Requests</h3>
+                <p>Track certificates and other college requests.</p>
+                <a href="/requests">Submit / View Requests</a>
+            </div>
+
+        </section>
+        <section class="tracking-section">
+
+    <h2>My Queries</h2>
+
+    {% if queries %}
+        {% for query in queries %}
+
+        <div class="tracking-card">
+
+            <div>
+                <span class="tracking-id">
+                    {{ query.query_id }}
+                </span>
+
+                <h3>{{ query.subject }}</h3>
+
+                <p>
+                    Department: {{ query.department }}
+                </p>
+
+                <p>
+                    {{ query.message }}
+                </p>
+            </div>
+
+            <span class="status">
+                {{ query.status }}
+            </span>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p class="empty-message">
+            You haven't submitted any queries yet.
+        </p>
+
+    {% endif %}
+
+</section>
+<section class="tracking-section">
+
+    <h2>My Requests</h2>
+
+    {% if requests %}
+        {% for req in requests %}
+
+        <div class="tracking-card">
+
+            <div>
+                <span class="tracking-id">
+                    {{ req.request_id }}
+                </span>
+
+                <h3>{{ req.type }}</h3>
+
+                <p>
+                    Department: {{ req.department }}
+                </p>
+
+                <p>
+                    {{ req.description }}
+                </p>
+            </div>
+
+            <span class="status">
+                {{ req.status }}
+            </span>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p class="empty-message">
+            You haven't submitted any requests yet.
+        </p>
+
+    {% endif %}
+
+</section>
+
+    </main>
+
+</body>
+</html>    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

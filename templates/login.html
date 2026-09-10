@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>CollegeConnect</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/calendar">Calendar</a>
+            <a href="/queries">Queries</a>
+            <a href="/requests">Requests</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="login-page">
+
+        <div class="login-container">
+
+            <h1>Student Login</h1>
+
+            <p>Login to access your CollegeConnect dashboard.</p>
+
+            <form id="login-form" method="POST" action="/login">
+
+                <label for="student-id">Student ID</label>
+
+                <input
+                    type="text"
+                    id="student-id"
+                    name="student_id"
+                    placeholder="Enter your Student ID"
+                    required
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            {% if error %}
+                <div id="login-result">
+                    <p>{{ error }}</p>
+                </div>
+            {% endif %}
+
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+

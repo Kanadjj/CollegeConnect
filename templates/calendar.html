@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendar - CollegeConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>CollegeConnect</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/#announcements">Announcements</a>
+            <a href="/calendar">Calendar</a>
+            <a href="/queries">Queries</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+
+        <button>Student</button>
+    </nav>
+
+
+    <main class="calendar-page">
+
+        <div class="calendar-header">
+
+            <p>COLLEGE SCHEDULE</p>
+
+            <h1>Calendar</h1>
+
+            <p>
+                Keep track of important examinations,
+                deadlines and college events.
+            </p>
+
+        </div>
+
+
+        <div id="events-list">
+
+            <!-- Events will be loaded here -->
+
+        </div>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

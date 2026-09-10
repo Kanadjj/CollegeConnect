@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CollegeConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>CollegeConnect</h2>
+
+        <div>
+            <a href="/">Home</a>
+<a href="/#announcements">Announcements</a>
+<a href="/calendar">Calendar</a>
+<a href="/queries">Queries</a>
+<a href="/requests">Requests</a>
+<a href="/dashboard">Dashboard</a>
+        </div>
+
+        <button>Student</button>
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div>
+                <p>WELCOME BACK</p>
+
+                <h1>
+                    Everything your college
+                    needs to tell you.
+                </h1>
+
+                <p>
+                    One place for announcements, deadlines,
+                    events and communication with your college.
+                </p>
+
+                <button>View Announcements</button>
+            </div>
+
+            <div class="deadline">
+                <p>NEXT DEADLINE</p>
+
+                <h2>Mid-Semester Examination</h2>
+
+                <p>15 September 2026</p>
+
+                <strong>5 Days Remaining</strong>
+            </div>
+
+        </section>
+
+
+        <section class="quick-access">
+            <section class="announcements">
+
+    <p class="section-label">LATEST INFORMATION</p>
+
+    <h2>Announcements</h2>
+
+    <div id="announcement-list">
+        <!-- Announcements will appear here -->
+    </div>
+
+</section>
+
+            <h2>Quick Access</h2>
+
+            <div class="cards">
+
+                <div class="card" onclick="window.location.href='/#announcements'">
+    <h3>📢 Announcements</h3>
+    <p>View important college notices.</p>
+</div>
+
+                <div class="card" onclick="window.location.href='/calendar'">
+    <h3>📅 Calendar</h3>
+    <p>Track events and deadlines.</p>
+</div>
+
+                <div class="card" onclick="window.location.href='/queries'">
+    <h3>💬 Ask a Query</h3>
+    <p>Contact the appropriate department.</p>
+</div>
+
+                <div class="card" onclick="window.location.href='/requests'">
+    <h3>📝 Requests</h3>
+    <p>Submit and track college requests.</p>
+</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
